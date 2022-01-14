@@ -5,13 +5,41 @@
 ul,ol{list-style: none;}
 a{color:initial;text-decoration: none;}
 img{max-width: 100%;max-height: 100%;}
+input{outline: none;}
 
 /* style */
 body{
-    background-color: #eee;
+    background-color: #ddd;
+}
+@media (min-width:500px){
+    body{
+        background-color: #fff;
+    }
+}
+.title{
+    display: flex;
+    justify-content: center;
+    color:#08acf8;
+    padding-top: 10px;
+}
+@media (min-width:500px){
+    .title{
+        color:#08acf8;
+        padding-top: 0;
+        position: relative;
+        top: 100px;
+    }
 }
 .globalHeader{ 
     margin: 20px;
+}
+@media (min-width:500px){
+    .globalHeader{
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 130px;
+    }
 }
 .searchForm{
     display: flex;
@@ -20,11 +48,18 @@ body{
 .searchForm > input{ 
     width: 100%;
     height: 40px;
-    border:none;
     padding: 0 8px;
-    border-radius: 4px;
-    margin-right: 8px;
+    border-radius: 4px 0 0 4px;
     font-size: 16px;
+    border:1px solid #c4c7ce;
+}
+@media (min-width:500px){
+    .searchForm > input{
+        max-width:600px;
+    }
+    .searchForm > input:focus{
+        border-color:#08acf8;
+    }
 }
 .searchForm > button{
     white-space: nowrap;
@@ -32,23 +67,37 @@ body{
     color: white;
     background-color: #08acf8;
     padding:0 27px;
-    border-radius: 4px;
+    border-radius: 0 4px 4px 0;
     font-size: 16px;
 }
 
-.globalMain{ }
+.globalMain{
+    max-width: 600px;
+ }
+@media (min-width:500px){
+    .globalMain{
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+     }
+}
 .siteList{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin: 19px;
+    justify-content: space-between;
+}
+@media (min-width:500px){
+    .siteList{
+        justify-content:start;
+        margin-left: 0;
+        margin-right: -12px;
+    }
 }
 .siteList > li{
     margin-bottom: 8px;
  }
 .siteList .site{
-    background-color: #fff;
-    border:1px solid #ddd;
     width: 160px;
     display: flex;
     flex-direction: column;
@@ -56,6 +105,17 @@ body{
     padding: 16px 0;
     border-radius: 4px;
     position: relative;
+    background-color: #fff;
+ }
+ @media (min-width:500px){
+    .siteList .site{
+        width: 141px;
+        margin-right: 12px;
+    }
+    .siteList .site:hover{
+        background-color: #ddd;
+        cursor: pointer;
+    }
  }
 .siteList .site > .logo{
     width: 64px;
@@ -71,13 +131,21 @@ body{
 }
 .siteList .addButton{
     background-color: #fff;
-    border:1px solid #ddd;
     width: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 16px 0;
+    border-radius: 4px;
+ }
+ @media (min-width:500px){
+    .siteList .addButton{
+        width:141px;
+    }
+    .siteList .addButton:hover{
+        background-color: #ddd;
+    }
  }
  .siteList .addButton .icon-wrapper{
      width: 64px;
@@ -99,6 +167,11 @@ body{
      top: 5px;
      right: 5px;
      display: none;
+ }
+ @media (min-width:500px){
+    .siteList > li .close{
+        cursor: default;
+    }
  }
  .siteList > li:hover .close{
      display: block;

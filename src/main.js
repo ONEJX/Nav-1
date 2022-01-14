@@ -50,6 +50,9 @@ const render = () => {
                     window.open(node.url)
                 }
                 return false
+            },
+            click: function(){
+                window.open(node.url)
             }
         })
         $li.on('click', '.close', (e) => {
