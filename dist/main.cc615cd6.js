@@ -167,5 +167,15 @@ window.onbeforeunload = function () {
     var string = JSON.stringify(hashMap);
     localStorage.setItem('x', string);
 };
+
+$(document).on('keypress', function (e) {
+    var key = e.key;
+
+    for (var i = 0; i < hashMap.length; i++) {
+        if (hashMap[i].logo.toLowerCase() === key.toLowerCase()) {
+            window.open(hashMap[i].url);
+        }
+    }
+});
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.b80e1d5f.map
+//# sourceMappingURL=main.cc615cd6.map
